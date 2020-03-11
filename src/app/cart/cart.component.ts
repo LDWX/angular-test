@@ -21,7 +21,6 @@ export class CartComponent implements OnInit {
       address: ''
     })
 
-    this.checkoutForm.registerControl("name", )
   }
 
   ngOnInit(): void {
