@@ -16,6 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { ObservableComponent } from './observable/observable.component';
+import { RouterEventComponent } from './router-event/router-event.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ObservableComponent } from './observable/observable.component';
     DashboardComponent,
     HeroSearchComponent,
     ObservableComponent,
+    RouterEventComponent,
   ],
   imports: [
     BrowserModule,

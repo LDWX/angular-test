@@ -4,7 +4,6 @@ import { Observable, Subject, of } from 'rxjs';
 import { Hero } from 'src/assets/utils/hero';
 import { HeroService } from '../hero.service';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
-import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
 
 
 @Component({

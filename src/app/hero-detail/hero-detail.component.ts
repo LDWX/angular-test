@@ -13,6 +13,11 @@ import { Hero } from 'src/assets/utils/hero';
 })
 export class HeroDetailComponent implements OnInit {
   hero: Hero;
+  time = new Observable<string>( observer => {
+    setInterval( () => {
+      observer.next(new Date().toString())
+    }, 1000 )
+  })
 
   constructor(
     private heroService: HeroService,
@@ -21,6 +26,7 @@ export class HeroDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    console.log("onInit")
     this.getHero()
   }
 

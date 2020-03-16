@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component'
 import { HeroDetailComponent } from './hero-detail/hero-detail.component'
 import { ObservableComponent } from "./observable/observable.component"
 
+
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'heroes', component: HeroesComponent },
