@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { NavigationStart, Router } from '@angular/router';
+import { NavigationStart, Router, ActivatedRoute } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
 @Component({
@@ -12,7 +12,8 @@ export class RouterEventComponent implements OnInit {
   navStart: Observable<NavigationStart>;
 
   constructor(
-    private route: Router
+    private route: Router,
+    private activatedRoute: ActivatedRoute
   ) {
     this.navStart = route.events.pipe(
       filter( evt => evt instanceof NavigationStart)
@@ -21,8 +22,11 @@ export class RouterEventComponent implements OnInit {
 
   ngOnInit(): void {
     this.navStart.subscribe(
-      evt => console.log("Navigation Start:: ", evt)
+      evt => console.log("Navigation Start:: ")
     )
+    debugger
+    this.activatedRoute.url
+      .subscribe( url => console.log('The URL changed to :', url) )
   }
 
 }
