@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Observable, Subject, of } from 'rxjs';
 
 import { Hero } from 'src/assets/utils/hero';
@@ -6,12 +6,15 @@ import { HeroService } from '../hero.service';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
 
+
 @Component({
   selector: 'app-hero-search',
   templateUrl: './hero-search.component.html',
   styleUrls: ['./hero-search.component.less']
 })
 export class HeroSearchComponent implements OnInit {
+  @Output() print: EventEmitter<string> = new EventEmitter<string>();
+
   heroes$: Observable<Hero[]>
   private searchTerms = new Subject<string>();
     
@@ -34,6 +37,10 @@ export class HeroSearchComponent implements OnInit {
   
   search(term: string): void {
     this.searchTerms.next(term)
+  }
+
+  trigger() {
+    this.print.emit("helloworld")
   }
 
 }
