@@ -17,30 +17,31 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { ObservableComponent } from './observable/observable.component';
 import { RouterEventComponent } from './router-event/router-event.component';
+import { IframeComponent } from './iframe/iframe.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeroesComponent,
-    HeroDetailComponent,
-    MessageComponent,
-    DashboardComponent,
-    HeroSearchComponent,
-    ObservableComponent,
-    RouterEventComponent,
-  ],
-  imports: [
-    BrowserModule,
-    ReactiveFormsModule,
-    FormsModule,
-    HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
-    RouterModule.forRoot([
-      // { path: "", component: ProductListComponent }
-    ]),
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+   declarations: [
+      AppComponent,
+      HeroesComponent,
+      HeroDetailComponent,
+      MessageComponent,
+      DashboardComponent,
+      HeroSearchComponent,
+      ObservableComponent,
+      RouterEventComponent,
+      IframeComponent
+   ],
+   imports: [
+      BrowserModule,
+      ReactiveFormsModule,
+      FormsModule,
+      HttpClientModule,
+      HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
+      RouterModule.forRoot([\n//path
+   ],
+   providers: [],
+   bootstrap: [
+      AppComponent
+   ]
 })
 export class AppModule { }
