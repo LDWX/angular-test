@@ -24,7 +24,7 @@ export class ObservableComponent implements OnInit {
      */
     const ESC_KEY = 27
     let nameInput = document.querySelector("#name") as HTMLInputElement
-    const subscription = this.formEvent(nameInput, 'keydown')    
+    const subscription = this.formEvent(nameInput, 'keydown')
     const canUnsubscribe = subscription.subscribe( (e:KeyboardEvent) => {
       if (e.keyCode === ESC_KEY) {
         nameInput.value = "hello"
@@ -53,7 +53,7 @@ export class ObservableComponent implements OnInit {
       err => console.log('1st err: ', err),
       () => console.log("1st sequence finished")
     )
-    
+
     setTimeout( () => {
       multicastSequence.subscribe(
         num => console.log('2st subscribe: ', num),
@@ -110,7 +110,6 @@ export class ObservableComponent implements OnInit {
             observers.forEach( obs => obs.next(val) )
           },
           complete() {
-            // debugger
             console.log("complete")
             let arr = observers
             arr.forEach( obs => {
@@ -146,9 +145,9 @@ export class ObservableComponent implements OnInit {
       }
     }, 1000)
   }
-  
 
-  
+
+
   // 事件代理
   formEvent(target, eventName) {
     return new Observable( observer => {

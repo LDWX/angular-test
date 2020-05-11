@@ -24,7 +24,6 @@ export class RouterEventComponent implements OnInit {
     this.navStart.subscribe(
       evt => console.log("Navigation Start:: ")
     )
-    debugger
     this.activatedRoute.url
       .subscribe( url => console.log('The URL changed to :', url) )
   }

@@ -1,5 +1,7 @@
 
 <h1>{{ title }}</h1>
+<h2>My favorite hero is： {{ myHero }}</h2>
+
 
 <h2>
   <a routerLink="/observable">Observable</a>
@@ -10,6 +12,11 @@
   <a  routerLink="/heroes">Heroes</a>
   <a  routerLink="/dashboard">Dashboard</a>
 </nav>
-<router-outlet></router-outlet>
+<div class="theme-light">
+  <div>
+    <router-outlet></router-outlet>
+
+  </div>
+</div>
 <app-message></app-message>
 <app-router-event></app-router-event>

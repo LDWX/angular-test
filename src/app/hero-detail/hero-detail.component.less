@@ -29,3 +29,20 @@ button:disabled {
   color: #ccc;
   cursor: auto;
 }
+
+.my-wrapper {
+  width: 500px;
+  height: 400px;
+  border: 1px solid #eeeeee;
+}
+
+:host-context(.theme-light) h2 {
+  background-color: yellow;
+}
+
+:host {
+  font-size: 18px;
+  button {
+    font-size: 30px;
+  }
+}

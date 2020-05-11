@@ -7,7 +7,6 @@ import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api'
 import { InMemoryDataService } from './in-memory-data.service'
 
-
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
@@ -17,6 +16,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { ObservableComponent } from './observable/observable.component';
 import { RouterEventComponent } from './router-event/router-event.component';
+import { HostBindingComponent } from './host-binding/host-binding.component';
+import { AdDirective } from './ad.directive';
+import { AdBannerComponent } from './ad-banner/ad-banner.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,9 @@ import { RouterEventComponent } from './router-event/router-event.component';
     HeroSearchComponent,
     ObservableComponent,
     RouterEventComponent,
+    HostBindingComponent,
+    AdDirective,
+    AdBannerComponent,
   ],
   imports: [
     BrowserModule,

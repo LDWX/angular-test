@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 import { Hero } from '../../assets/utils/hero';
 import { HeroService } from '../hero.service';
 
@@ -22,5 +22,10 @@ export class DashboardComponent implements OnInit {
   }
   printHello (val) {
     console.log("this is printHello::: ", val)
+  }
+  @HostBinding('style.width')
+  get changeWidth() {
+    console.log("thisis HostBinding");
+    return "this is HostBinding";
   }
 }

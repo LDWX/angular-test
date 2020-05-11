@@ -1,10 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { HeroService } from '../hero.service'
 import { Observable } from 'rxjs';
 import { Hero } from 'src/assets/utils/hero';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-hero-detail',
@@ -13,6 +14,9 @@ import { Hero } from 'src/assets/utils/hero';
 })
 export class HeroDetailComponent implements OnInit {
   hero: Hero;
+  show = false;
+  path:SafeResourceUrl;
+  token = "";
   time = new Observable<string>( observer => {
     setInterval( () => {
       observer.next(new Date().toString())
@@ -22,12 +26,16 @@ export class HeroDetailComponent implements OnInit {
   constructor(
     private heroService: HeroService,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    public sanitizer: DomSanitizer
   ) { }
 
   ngOnInit(): void {
     console.log("onInit")
     this.getHero()
+    this.token = "hello this is my token";
+    this.path = this.sanitizer.bypassSecurityTrustResourceUrl("https://www.baidu.com/");
+
   }
 
   getHero(): void {
@@ -42,7 +50,7 @@ export class HeroDetailComponent implements OnInit {
   }
 
   goBack() {
-    
+
   }
 
 }
