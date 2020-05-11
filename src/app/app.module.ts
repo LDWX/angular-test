@@ -17,8 +17,6 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { ObservableComponent } from './observable/observable.component';
 import { RouterEventComponent } from './router-event/router-event.component';
 import { HostBindingComponent } from './host-binding/host-binding.component';
-import { AdDirective } from './ad.directive';
-import { AdBannerComponent } from './ad-banner/ad-banner.component';
 
 @NgModule({
   declarations: [
@@ -31,8 +29,6 @@ import { AdBannerComponent } from './ad-banner/ad-banner.component';
     ObservableComponent,
     RouterEventComponent,
     HostBindingComponent,
-    AdDirective,
-    AdBannerComponent,
   ],
   imports: [
     BrowserModule,

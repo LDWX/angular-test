@@ -15,6 +15,7 @@ const routes: Routes = [
 
 
   { path: 'observable', component: ObservableComponent },
+  { path: 'iframe', }
 ]
 
 @NgModule({
